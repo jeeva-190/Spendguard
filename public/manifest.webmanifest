@@ -1,0 +1,9 @@
+{
+  "name": "SpendGuard — Ask your PayPal",
+  "short_name": "SpendGuard",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f4f6fb",
+  "theme_color": "#0b1b3a",
+  "icons": [{ "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }]
+}

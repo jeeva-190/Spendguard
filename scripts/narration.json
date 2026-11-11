@@ -1,0 +1,122 @@
+[
+ {
+  "id": "title",
+  "say": "Meet SpendGuard: an AI that checks every PayPal payment before it leaves your account.",
+  "show": ""
+ },
+ {
+  "id": "problem",
+  "say": "Budgeting apps tell you that you overspent after the money is already gone. SpendGuard steps in before it goes.",
+  "show": ""
+ },
+ {
+  "id": "sync",
+  "say": "It reads a month of payments from PayPal: sales, payouts, fees and refunds.",
+  "show": "SpendGuard reads a month of payments from PayPal: sales, payouts, fees and refunds"
+ },
+ {
+  "id": "safe",
+  "say": "Up top, one number to act on: what is safe to spend today, against your monthly budget.",
+  "show": "One number to act on: what is safe to spend today, against your monthly budget"
+ },
+ {
+  "id": "alerts",
+  "say": "Alerts and AI notes catch what you would miss: a spending spike, forgotten subscriptions, and an unusual four hundred and forty nine dollar payment, made at 2 AM.",
+  "show": "Alerts and AI notes: spending spikes, forgotten subscriptions, an unusual $449 payment at 2 AM"
+ },
+ {
+  "id": "calendar",
+  "say": "Every day of the month at a glance. Tap a day to see exactly what went out.",
+  "show": "Every day of the month at a glance. Tap a day to see its payments"
+ },
+ {
+  "id": "where",
+  "say": "And here is where the money went, compared with the same days last month.",
+  "show": "Where the money went, compared with the same days last month"
+ },
+ {
+  "id": "grid",
+  "say": "Every transaction lives in an AG Grid table you can search, filter and sort.",
+  "show": "Every transaction in an AG Grid table: search, filter, sort"
+ },
+ {
+  "id": "fix",
+  "say": "The AI sorts each payment into a category. If it gets one wrong, tap it and fix it.",
+  "show": "The AI sorts each payment into a category. Wrong? Tap it and fix it"
+ },
+ {
+  "id": "shoes",
+  "say": "Now the main feature. Let's buy a hundred and twenty dollars of running shoes, late at night.",
+  "show": "Now the main feature: $120 of running shoes, late at night"
+ },
+ {
+  "id": "check",
+  "say": "SpendGuard checks the payment before anything reaches PayPal.",
+  "show": "SpendGuard checks the payment before anything reaches PayPal"
+ },
+ {
+  "id": "stopped",
+  "say": "Stopped. My shopping budget is set to block, and this payment would push me over it.",
+  "show": "STOPPED: the Shopping budget blocks payments, and this one would go over"
+ },
+ {
+  "id": "options",
+  "say": "I can wait and decide later, or override it, but only by writing down why.",
+  "show": "Wait and decide later, or override, but only by writing down why"
+ },
+ {
+  "id": "wait",
+  "say": "I'll wait. Impulse buys rarely survive the wait.",
+  "show": "I'll wait. Impulse buys rarely survive the wait"
+ },
+ {
+  "id": "prize",
+  "say": "Next, a classic scam: a six hundred and fifty dollar prize fee, to someone I have never paid.",
+  "show": "A classic scam: a $650 \"prize fee\" to someone I have never paid"
+ },
+ {
+  "id": "hold",
+  "say": "Hold. A large first-time payee and negative cash flow, flagged before a single dollar moves.",
+  "show": "HOLD: large first-time payee and negative cash flow, flagged before a dollar moves"
+ },
+ {
+  "id": "designer",
+  "say": "A normal payment to my designer is cleared,",
+  "show": "A normal payment to my designer is cleared"
+ },
+ {
+  "id": "payout",
+  "say": "and sent through PayPal's Payouts API. Here is the exact request.",
+  "show": "and sent through the PayPal Payouts API. Here is the exact request"
+ },
+ {
+  "id": "history",
+  "say": "Every checked payment is kept, including the reason for any override.",
+  "show": "Every checked payment is kept, including the reason for any override"
+ },
+ {
+  "id": "ask",
+  "say": "I can also just ask my PayPal. The AI looks up exact numbers with tools, instead of guessing.",
+  "show": "Ask your PayPal. The AI looks up exact numbers with tools instead of guessing"
+ },
+ {
+  "id": "budgets",
+  "say": "Each budget can alert me, or block payments that would go over.",
+  "show": "Each budget can alert you, or block payments that would go over"
+ },
+ {
+  "id": "settings",
+  "say": "Anyone can bring their own PayPal sandbox keys and any AI key: Claude, OpenAI, Gemini, Groq and more.",
+  "show": "Bring your own PayPal sandbox keys and any AI key: Claude, OpenAI, Gemini, Groq and more"
+ },
+ {
+  "id": "private",
+  "say": "Keys are checked first, then kept privately for that browser only.",
+  "show": "Keys are checked first, then kept privately for your browser only"
+ },
+ {
+  "id": "end",
+  "say": "SpendGuard. It checks before you spend. Built with PayPal Transaction Search and Payouts, AI with tool calling, and AG Grid.",
+  "show": ""
+ }
+]

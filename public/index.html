@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#11402F" />
+  <title>SpendGuard — Ask your PayPal</title>
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/vendor/fontsource/schibsted-grotesk/400.css" />
+  <link rel="stylesheet" href="/vendor/fontsource/schibsted-grotesk/500.css" />
+  <link rel="stylesheet" href="/vendor/fontsource/schibsted-grotesk/600.css" />
+  <link rel="stylesheet" href="/vendor/fontsource/schibsted-grotesk/700.css" />
+  <link rel="stylesheet" href="/vendor/fontsource/schibsted-grotesk/800.css" />
+  <link rel="stylesheet" href="/vendor/fontsource/big-shoulders-stencil-display/800.css" />
+  <link rel="stylesheet" href="/vendor/ag-grid/styles/ag-grid.css" />
+  <link rel="stylesheet" href="/vendor/ag-grid/styles/ag-theme-quartz.css" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M4 11.5 12 5l8 6.5V19a1 1 0 0 1-1 1h-4.5v-5h-5v5H5a1 1 0 0 1-1-1z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="i-list" viewBox="0 0 24 24"><path d="M8 7h12M8 12h12M8 17h12M4 7h.01M4 12h.01M4 17h.01" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3.5 19 6v5.5c0 4.4-3 7.6-7 9-4-1.4-7-4.6-7-9V6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="m9 12 2.2 2.2L15.5 10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M5 5h14a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1h-8l-4 3.5V16H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+    <symbol id="i-gauge" viewBox="0 0 24 24"><path d="M4 16a8 8 0 1 1 16 0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="m12 16 4-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-sync" viewBox="0 0 24 24"><path d="M19 8a7.5 7.5 0 0 0-13.5 1M5 16a7.5 7.5 0 0 0 13.5-1M19 4v4h-4M5 20v-4h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-gear" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></g></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="2.8" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  </svg>
+
+  <div class="app">
+    <nav class="rail" aria-label="Main">
+      <div class="mark"><img src="/icon.svg" alt="" width="34" height="34" /><span>SpendGuard</span></div>
+      <button data-go="home" class="active"><svg><use href="#i-home"/></svg><span>Home</span></button>
+      <button data-go="activity"><svg><use href="#i-list"/></svg><span>Activity</span></button>
+      <button data-go="pay" class="pay-tab"><svg><use href="#i-shield"/></svg><span>Pay</span></button>
+      <button data-go="ask"><svg><use href="#i-chat"/></svg><span>Ask</span></button>
+      <button data-go="budgets"><svg><use href="#i-gauge"/></svg><span>Budgets</span></button>
+      <button data-go="settings" class="rail-settings"><svg><use href="#i-gear"/></svg><span>Settings</span></button>
+    </nav>
+
+    <div class="stage">
+      <header class="bar">
+        <div class="bar-title">
+          <img class="bar-logo" src="/icon.svg" alt="" width="28" height="28" />
+          <h1 id="viewTitle">This month</h1>
+        </div>
+        <div class="bar-actions">
+          <label class="month"><span class="sr">Month</span><select id="month"></select></label>
+          <button id="syncBtn" class="ghost-icon" title="Sync with PayPal" aria-label="Sync with PayPal"><svg><use href="#i-sync"/></svg></button>
+          <button class="ghost-icon bar-settings" data-go="settings" title="Settings" aria-label="Settings"><svg><use href="#i-gear"/></svg></button>
+        </div>
+      </header>
+      <p id="modeLine" class="mode-line"></p>
+
+      <main>
+        <!-- HOME -->
+        <section id="view-home" class="view active" aria-labelledby="viewTitle">
+          <div class="home">
+            <div class="home-main">
+              <div class="hero" id="hero">
+                <p class="hero-label" id="heroLabel">Safe to spend today</p>
+                <p class="hero-num" id="heroNum">$0</p>
+                <p class="hero-sub" id="heroSub"></p>
+                <div class="pace" id="pace" aria-hidden="true"><i class="pace-spent"></i><i class="pace-today"></i></div>
+                <dl class="ledger">
+                  <div><dt>Came in</dt><dd id="kIn">–</dd><small id="kInSub"></small></div>
+                  <div><dt>Went out</dt><dd id="kOut">–</dd><small id="kOutSub"></small></div>
+                  <div><dt>Kept</dt><dd id="kNet">–</dd><small id="kNetSub"></small></div>
+                </dl>
+              </div>
+
+              <section class="block o-cal">
+                <div class="block-head"><h2>Every day this month</h2><span class="hint" id="calHint">Tap a day for details</span></div>
+                <div class="cal" id="cal"></div>
+                <div class="day-detail" id="dayDetail" hidden></div>
+              </section>
+
+              <section class="block o-where">
+                <div class="block-head"><h2>Where it went</h2><span class="hint" id="catTotal"></span></div>
+                <div class="split" id="split"></div>
+                <ul class="cats" id="cats"></ul>
+              </section>
+            </div>
+
+            <aside class="home-side">
+              <section class="block o-alerts" id="alertsBlock">
+                <div class="block-head"><h2>Needs a look</h2><span class="count" id="alertCount"></span></div>
+                <ul class="alerts" id="alerts"></ul>
+              </section>
+
+              <section class="block o-notes">
+                <div class="block-head"><h2>What the AI noticed</h2><span class="hint" id="insSource"></span></div>
+                <ul class="notes" id="insights"></ul>
+              </section>
+
+              <section class="block o-budgets">
+                <div class="block-head"><h2>Budgets</h2><button class="text-btn" data-go="budgets">Change</button></div>
+                <div id="budgetMini"></div>
+              </section>
+
+              <section class="block o-subs">
+                <div class="block-head"><h2>Subscriptions</h2><span class="hint" id="subTotal"></span></div>
+                <ul class="subs" id="subs"></ul>
+              </section>
+            </aside>
+          </div>
+        </section>
+
+        <!-- ACTIVITY -->
+        <section id="view-activity" class="view">
+          <div class="activity-tools">
+            <input id="gridSearch" type="search" placeholder="Search by name, note or category" aria-label="Search transactions" />
+            <div class="filters" id="dirFilter" role="group" aria-label="Show">
+              <button data-dir="all" class="on">All</button><button data-dir="out">Money out</button><button data-dir="in">Money in</button>
+            </div>
+          </div>
+          <p class="hint pad">Category wrong? Tap it and pick the right one. SpendGuard remembers.</p>
+          <div id="grid" class="ag-theme-quartz grid-box"></div>
+        </section>
+
+        <!-- PAY -->
+        <section id="view-pay" class="view">
+          <div class="pay-layout">
+            <form id="payForm" class="slip" autocomplete="off">
+              <h2>Send money with PayPal</h2>
+              <p class="hint">SpendGuard checks the payment against your budgets and habits before anything reaches PayPal.</p>
+              <label class="line"><span>To</span><input name="payeeName" placeholder="Name of person or shop" maxlength="60" /></label>
+              <label class="line"><span>PayPal email</span><input name="payee" type="email" required placeholder="name@example.com" /></label>
+              <label class="line amount"><span>Amount</span><b>$</b><input name="amount" type="number" inputmode="decimal" step="0.01" min="0.01" max="10000" required placeholder="0.00" /></label>
+              <label class="line"><span>For</span><input name="note" placeholder="What is it for?" maxlength="160" /></label>
+              <label class="line"><span>Category</span><select name="category"><option value="">Let SpendGuard decide</option></select></label>
+              <button class="btn primary wide" type="submit">Check this payment</button>
+              <div class="tries">
+                <p>Try one</p>
+                <button type="button" data-preset='{"payeeName":"Stride Sports","payee":"orders@stride-sports.example","amount":120,"note":"Running shoes"}'>Shoes, $120</button>
+                <button type="button" data-preset='{"payeeName":"Priya Raman","payee":"priya.design@example.com","amount":180,"note":"Freelance design work - product photos"}'>Designer, $180</button>
+                <button type="button" data-preset='{"payeeName":"Lucky Deals Ltd","payee":"winner@lucky-deals.biz","amount":650,"note":"Prize processing fee"}'>"Prize fee", $650</button>
+              </div>
+            </form>
+
+            <section class="block checked">
+              <div class="block-head"><h2>Checked payments</h2></div>
+              <ul class="intents" id="intents"></ul>
+            </section>
+          </div>
+        </section>
+
+        <!-- ASK -->
+        <section id="view-ask" class="view">
+          <div class="ask">
+            <div class="chat" id="chat" aria-live="polite">
+              <div class="msg bot">Ask me about your PayPal money. I look up your real transactions before I answer, so the numbers are exact.</div>
+            </div>
+            <div class="ask-dock">
+            <div class="suggest" id="chips">
+              <button>How much did I spend on food this month?</button>
+              <button>What are my 3 biggest expenses this month?</button>
+              <button>Can I afford a $300 phone?</button>
+              <button>Which subscriptions should I cancel?</button>
+              <button>Compare my ad spend with last month</button>
+            </div>
+            <form id="askForm" class="ask-form">
+              <input id="askInput" placeholder="Ask about your money" autocomplete="off" aria-label="Your question" />
+              <button class="btn primary" type="submit">Ask</button>
+            </form>
+            </div>
+          </div>
+        </section>
+
+        <!-- BUDGETS -->
+        <section id="view-budgets" class="view">
+          <div class="budgets-layout">
+            <section class="block">
+              <div class="block-head"><h2>Your budgets</h2></div>
+              <p class="hint"><b>Alert</b> tells you when you get close. <b>Block</b> stops payments that would go over, unless you write down why you need it.</p>
+              <div id="budgetList"></div>
+            </section>
+            <form id="budgetForm" class="slip small">
+              <h2 id="budgetFormTitle">Add a budget</h2>
+              <label class="line"><span>For</span><select name="category"></select></label>
+              <label class="line amount"><span>Per month</span><b>$</b><input name="limit" type="number" min="1" step="1" required placeholder="0" /></label>
+              <fieldset class="modes">
+                <legend class="sr">When I go over</legend>
+                <label><input type="radio" name="mode" value="alert" checked /><span><b>Alert me</b>Warn me, let me decide</span></label>
+                <label><input type="radio" name="mode" value="block" /><span><b>Block payments</b>Stop anything that goes over</span></label>
+              </fieldset>
+              <button class="btn primary wide" type="submit">Save budget</button>
+              <button class="text-btn reset" type="button" id="resetDemo">Reset sample data</button>
+            </form>
+          </div>
+        </section>
+        <!-- SETTINGS -->
+        <section id="view-settings" class="view">
+          <div class="settings">
+            <section class="block intro">
+              <p class="lead">SpendGuard works with <b>your own</b> PayPal sandbox keys and <b>any AI key</b> you have. Add them here to see your real sandbox payments, send real sandbox payouts and get answers written by your AI.</p>
+              <ul class="status" id="keyStatus"></ul>
+            </section>
+
+            <form class="slip keyform" id="ppForm" autocomplete="off">
+              <div class="kf-head"><h2>PayPal sandbox</h2><span class="pill" id="ppPill"></span></div>
+              <ol class="steps">
+                <li>Open <a href="https://developer.paypal.com/dashboard/applications/sandbox" target="_blank" rel="noopener">developer.paypal.com</a> and log in.</li>
+                <li>Go to <b>Apps &amp; Credentials</b>, make sure <b>Sandbox</b> is selected, and create an app (type: Merchant).</li>
+                <li>In the app's features, tick <b>Transaction search</b> and <b>Payouts</b>, then save.</li>
+                <li>Copy the <b>Client ID</b> and <b>Secret</b> into the boxes below.</li>
+              </ol>
+              <p class="current" id="ppCurrent" hidden></p>
+              <label class="line"><span>Client ID</span><input name="clientId" spellcheck="false" autocapitalize="off" placeholder="Starts with A…" /></label>
+              <label class="line"><span>Secret</span><input name="secret" type="password" spellcheck="false" autocapitalize="off" placeholder="Starts with E…" /><button type="button" class="peek" data-peek aria-label="Show secret"><svg><use href="#i-eye"/></svg></button></label>
+              <p class="form-msg" id="ppMsg" role="status"></p>
+              <button class="btn primary wide" type="submit">Check and connect PayPal</button>
+              <button class="text-btn forget" type="button" data-forget="paypal" hidden>Remove my PayPal keys</button>
+            </form>
+
+            <form class="slip keyform" id="aiForm" autocomplete="off">
+              <div class="kf-head"><h2>AI model</h2><span class="pill" id="aiPill"></span></div>
+              <p class="hint" style="margin-bottom:10px">Use a key from any of these: Claude, OpenAI, Gemini, Groq, OpenRouter, DeepSeek, Mistral, or any OpenAI-compatible API. SpendGuard picks the provider from the key, and you can change it.</p>
+              <ol class="steps" id="aiSteps"></ol>
+              <p class="current" id="aiCurrent" hidden></p>
+              <label class="line"><span>Provider</span><select name="provider" id="aiProvider"></select></label>
+              <label class="line"><span>API key</span><input name="key" type="password" spellcheck="false" autocapitalize="off" placeholder="Paste your key" /><button type="button" class="peek" data-peek aria-label="Show key"><svg><use href="#i-eye"/></svg></button></label>
+              <label class="line"><span>Model</span><input name="model" id="aiModel" spellcheck="false" autocapitalize="off" /></label>
+              <label class="line" id="aiBaseRow" hidden><span>Base URL</span><input name="baseUrl" type="url" spellcheck="false" autocapitalize="off" placeholder="https://your-api.example.com/v1" /></label>
+              <p class="form-msg" id="aiMsg" role="status"></p>
+              <button class="btn primary wide" type="submit">Check and turn on AI</button>
+              <button class="text-btn forget" type="button" data-forget="ai" hidden>Remove my AI key</button>
+            </form>
+
+            <section class="block privacy">
+              <h2>How your keys are kept</h2>
+              <p>Keys are checked with PayPal and your AI provider, then saved on this SpendGuard server for <b>this browser only</b>. They are never shown again in full, never shared with other visitors, and only ever sent to PayPal and the AI provider you chose. Use PayPal sandbox keys only. Remove them any time.</p>
+            </section>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <!-- Payment check ticket -->
+  <div id="sheet" class="sheet" hidden>
+    <div class="ticket" role="dialog" aria-modal="true" aria-labelledby="ticketTitle">
+      <button class="ticket-close" data-close aria-label="Close"><svg><use href="#i-close"/></svg></button>
+      <div id="sheetBody"></div>
+    </div>
+  </div>
+  <div id="toast" class="toast" role="status" hidden></div>
+
+  <script src="/vendor/ag-grid/dist/ag-grid-community.min.noStyle.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: spendguard
+    runtime: node
+    plan: free
+    buildCommand: npm ci
+    startCommand: node server.js
+    healthCheckPath: /api/config
+    envVars:
+      - key: PAYPAL_ENV
+        value: sandbox
+      - key: DEMO_DATA
+        value: "true"
+      - key: COOL_OFF_MINUTES
+        value: "2"
+      - key: AI_DAILY_LIMIT
+        value: "400"
+      - key: PAYPAL_CLIENT_ID
+        sync: false
+      - key: PAYPAL_CLIENT_SECRET
+        sync: false
+      - key: AI_API_KEY
+        sync: false
